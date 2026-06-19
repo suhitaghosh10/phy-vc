@@ -15,578 +15,341 @@
       --accent: #2d5a3d;
       --accent-light: #e8f2ec;
       --tag-bg: #eae6e0;
+      --female-bg: #fff0f6;
+      --female-text: #8b3a5a;
+      --male-bg: #f0f4ff;
+      --male-text: #2a3f8b;
       --radius: 10px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.65;
-    }
+    section.abstract { max-width: 720px; margin: 48px auto 48px; padding: 0 24px; }
+    .abstract .section-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .abstract p.body { color: var(--muted); font-size: 0.92rem; border-left: 3px solid var(--accent); padding-left: 18px; }
 
-    /* ── Hero ── */
-    header {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 72px 24px 48px;
-      text-align: center;
-    }
+    .section-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 4px; }
+    .section-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+    .samples-wrap { max-width: 1160px; margin: 0 auto 72px; padding: 0 24px; }
 
-    .venue-tag {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      background: var(--accent-light);
-      color: var(--accent);
-      border: 1px solid #b9d8c4;
-      padding: 4px 12px;
-      border-radius: 99px;
-      margin-bottom: 28px;
-    }
-
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.15;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
-
-    .authors {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .links {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: .06em;
-      padding: 8px 18px;
-      border-radius: 6px;
-      border: 1.5px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      text-decoration: none;
-      transition: border-color .2s, background .2s;
-    }
-    .btn:hover { border-color: var(--accent); background: var(--accent-light); }
-    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .btn.primary:hover { background: #234a31; border-color: #234a31; }
-
-    /* ── Abstract ── */
-    section.abstract {
-      max-width: 720px;
-      margin: 0 auto 64px;
-      padding: 0 24px;
-    }
-
-    .abstract p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      border-left: 3px solid var(--accent);
-      padding-left: 18px;
-    }
-
-    /* ── Section labels ── */
-    .section-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.7rem;
-      margin-bottom: 4px;
-    }
-
-    .section-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    /* ── Samples container ── */
-    .samples-wrap {
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 24px;
-    }
-
-    /* ── Table layout for audio comparisons ── */
-    .audio-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .audio-table thead tr {
-      background: var(--tag-bg);
-    }
-
-    .audio-table th {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 13px 18px;
-      text-align: center;
-      border-bottom: 1.5px solid var(--border);
-    }
-
-    .audio-table th:first-child { text-align: left; }
-
-    .audio-table td {
-      padding: 14px 18px;
-      vertical-align: middle;
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .audio-table td:first-child { text-align: left; }
-    .audio-table tr:last-child td { border-bottom: none; }
-
-    .audio-table tr:hover td { background: #faf9f7; }
-
-    .sample-label {
-      font-size: 0.88rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .sample-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      margin-top: 2px;
-    }
-
-    /* ── Custom audio player ── */
-    audio {
-      width: 100%;
-      min-width: 160px;
-      max-width: 220px;
-      height: 36px;
-      accent-color: var(--accent);
-    }
-
-    audio::-webkit-media-controls-panel { background: var(--accent-light); }
-
-    .model-badge {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: .06em;
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-bottom: 6px;
-      background: var(--tag-bg);
-      color: var(--muted);
-    }
-
-    .model-badge.ours {
-      background: var(--accent-light);
-      color: var(--accent);
-      border: 1px solid #b9d8c4;
-      font-weight: 500;
-    }
-
-    /* ── Condition tabs ── */
-    .tabs {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .tab {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: .07em;
-      padding: 6px 16px;
-      border-radius: 6px;
-      border: 1.5px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      cursor: pointer;
-      transition: all .15s;
-    }
-
+    .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
+    .tab { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .06em; padding: 5px 14px; border-radius: 6px; border: 1.5px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; transition: all .15s; }
     .tab:hover { border-color: var(--accent); color: var(--accent); }
     .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-    /* ── Divider ── */
-    .divider {
-      border: none;
-      border-top: 1.5px solid var(--border);
-      margin: 0 24px 64px;
-    }
+    .audio-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+    .audio-table thead tr { background: var(--tag-bg); }
+    .audio-table th { font-family: 'DM Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; text-align: center; border-bottom: 1.5px solid var(--border); }
+    .audio-table th:first-child { text-align: left; }
 
-    /* ── Figure ── */
-    .fig-wrap {
-      max-width: 860px;
-      margin: 0 auto 80px;
-      padding: 0 24px;
-    }
+    /* source cell spans 2 rows */
+    td.src-cell { padding: 12px 14px; vertical-align: middle; border-bottom: 1.5px solid var(--border); border-right: 1px solid var(--border); }
+    .audio-table td { padding: 10px 12px; vertical-align: middle; border-bottom: 1px solid var(--border); text-align: center; }
+    .audio-table tr.pair-bottom td { border-bottom: 1.5px solid var(--border); }
+    .audio-table tbody tr:last-child td { border-bottom: none; }
+    .audio-table tr:hover td { background: #faf9f7; }
 
-    .fig-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      text-align: center;
-    }
+    .tgt-cell { width: 88px; min-width: 80px; text-align: center !important; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .07em; font-weight: 600; border-right: 1px solid var(--border); }
+    .tgt-cell.female { background: var(--female-bg); color: var(--female-text); }
+    .tgt-cell.male   { background: var(--male-bg);   color: var(--male-text); }
 
-    .fig-placeholder {
-      width: 100%;
-      height: 220px;
-      background: var(--tag-bg);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: .06em;
-      margin-bottom: 14px;
-    }
+    .sample-label { font-size: 0.85rem; font-weight: 600; }
+    .sample-meta  { font-size: 0.75rem; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 2px; }
+    .disfluency-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .05em; padding: 1px 7px; border-radius: 4px; background: var(--tag-bg); color: var(--muted); margin-top: 5px; }
 
-    .fig-caption {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
+    .model-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px; margin-bottom: 4px; background: var(--tag-bg); color: var(--muted); }
+    .model-badge.ours { background: var(--accent-light); color: var(--accent); border: 1px solid #b9d8c4; font-weight: 600; }
 
-    /* ── Footer ── */
-    footer {
-      border-top: 1.5px solid var(--border);
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 24px 64px;
-      text-align: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .04em;
-    }
+    audio { width: 100%; min-width: 140px; max-width: 190px; height: 34px; accent-color: var(--accent); display: block; margin: 0 auto; }
 
-    /* ── Responsive ── */
-    @media (max-width: 640px) {
-      .audio-table th, .audio-table td { padding: 10px 10px; }
-      audio { min-width: 120px; max-width: 160px; }
+    .divider { border: none; border-top: 1.5px solid var(--border); margin: 0 24px 64px; }
+
+    .fig-wrap { max-width: 860px; margin: 0 auto 80px; padding: 0 24px; }
+    .fig-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; }
+    .fig-placeholder { width: 100%; height: 200px; background: var(--tag-bg); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .06em; margin-bottom: 14px; }
+    .fig-caption { font-size: 0.8rem; color: var(--muted); }
+
+    footer { border-top: 1.5px solid var(--border); max-width: 860px; margin: 0 auto; padding: 28px 24px 56px; text-align: center; font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--muted); letter-spacing: .04em; }
+
+    @media (max-width: 700px) {
+      .audio-table th, .audio-table td { padding: 8px 7px; }
+      audio { min-width: 100px; max-width: 140px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="venue-tag">Interspeech 2026</div>
-  <h1>Phy-VC: <em>Physics-Informed</em><br>Voice Conversion</h1>
-  <p class="subtitle">Preserving clinical speech markers through vocal-tract-aware anonymization via Webster's equation and DDSP synthesis</p>
-  <p class="authors">
-    Author Name<sup>1</sup>, Co-author Name<sup>1</sup>, Advisor Name<sup>1,2</sup><br>
-    <sup>1</sup>Institution &nbsp;·&nbsp; <sup>2</sup>Lab Name
-  </p>
-  <div class="links">
-    <a class="btn primary" href="#">📄 Paper</a>
-    <a class="btn" href="#">⚙️ Code</a>
-    <a class="btn" href="#">🗂 Dataset</a>
-    <a class="btn" href="#">📊 ArXiv</a>
-  </div>
-</header>
-
 <section class="abstract">
   <p class="section-title">Abstract</p>
   <p style="height:8px"></p>
-  <p>
-    We present Phy-VC, a physics-informed voice conversion framework that leverages Webster's horn equation to model sub-glottal resonance and vocal tract acoustics. Unlike purely data-driven approaches, Phy-VC encodes articulatory parameters as interpretable physical constraints, enabling speaker anonymization while faithfully preserving clinically diagnostic markers — including disfluencies in stuttering, pause patterns in dementia speech, and prosodic characteristics in elderly speakers.
+  <p class="body">
+    We present Phy-VC, a physics-informed voice conversion framework that leverages Webster's horn equation to model vocal tract acoustics. Phy-VC anonymizes speaker identity — converting each source to both female and male target voices — while faithfully preserving clinically diagnostic markers: disfluencies in stuttering, pause patterns in dementia, and prosodic degradations in elderly speech.
   </p>
 </section>
 
 <hr class="divider"/>
 
-<!-- ═══════════════════════════════════════
-     SECTION 1 · Stuttering (SEP-28k)
-═══════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+  SECTION 1 · Stuttering (SEP-28k)
+  Path: final_files/stuttering/{type}/{n}_{src}_{tgt}_{model}.wav
+        final_files/stuttering/{type}/{n}_original.wav
+══════════════════════════════════════ -->
 <div class="samples-wrap">
   <p class="section-title">Experiment 01</p>
   <h2>Stuttering Speech</h2>
-  <p class="section-desc">SEP-28k dataset · Disfluency preservation (repetitions, prolongations, blocks)</p>
-
+  <p class="section-desc">SEP-28k dataset &nbsp;·&nbsp; Each source utterance is anonymized to a female and a male voice. Disfluencies should be preserved in both conversions.</p>
   <div class="tabs">
-    <button class="tab active" onclick="showGroup(this,'stutter','all')">All</button>
-    <button class="tab" onclick="showGroup(this,'stutter','rep')">Repetitions</button>
-    <button class="tab" onclick="showGroup(this,'stutter','prol')">Prolongations</button>
-    <button class="tab" onclick="showGroup(this,'stutter','block')">Blocks</button>
+    <button class="tab active" onclick="filterTable('stutter','all',this)">All</button>
+    <button class="tab" onclick="filterTable('stutter','srep',this)">Sound Rep.</button>
+    <button class="tab" onclick="filterTable('stutter','wrep',this)">Word Rep.</button>
+    <button class="tab" onclick="filterTable('stutter','prolongation',this)">Prolongation</button>
+    <button class="tab" onclick="filterTable('stutter','block',this)">Block</button>
+    <button class="tab" onclick="filterTable('stutter','filler',this)">Filler</button>
   </div>
-
   <table class="audio-table" id="table-stutter">
     <thead>
       <tr>
-        <th>Sample</th>
-        <th>
-          <span class="model-badge">SOURCE</span><br>Original Speaker
-        </th>
-        <th>
-          <span class="model-badge">kNN-VC</span><br>Baseline
-        </th>
-        <th>
-          <span class="model-badge">YourTTS</span><br>Baseline
-        </th>
-        <th>
-          <span class="model-badge ours">PHY-VC</span><br>Ours
-        </th>
-        <th>
-          <span class="model-badge">TARGET</span><br>Reference
-        </th>
+        <th style="text-align:left">Sample</th>
+        <th>Source</th>
+        <th><span class="model-badge">kNN-VC</span></th>
+        <th><span class="model-badge">Emo-StarGAN</span></th>
+        <th><span class="model-badge">DDSP-QbE</span></th>
+        <th><span class="model-badge ours">Phy-VC (Ours)</span></th>
       </tr>
     </thead>
-    <tbody>
-      <!-- Row 1 -->
-      <tr data-tag="rep">
-        <td>
-          <div class="sample-label">S01 · Repetition</div>
-          <div class="sample-meta">M · 28 · "I-I-I want to go"</div>
-        </td>
-        <td><audio controls src="audio/stutter/s01_source.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s01_knn.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s01_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s01_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s01_target.wav"></audio></td>
-      </tr>
-      <!-- Row 2 -->
-      <tr data-tag="prol">
-        <td>
-          <div class="sample-label">S02 · Prolongation</div>
-          <div class="sample-meta">F · 34 · "Pleeeease help me"</div>
-        </td>
-        <td><audio controls src="audio/stutter/s02_source.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s02_knn.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s02_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s02_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s02_target.wav"></audio></td>
-      </tr>
-      <!-- Row 3 -->
-      <tr data-tag="block">
-        <td>
-          <div class="sample-label">S03 · Block</div>
-          <div class="sample-meta">M · 41 · "The ··· bus is late"</div>
-        </td>
-        <td><audio controls src="audio/stutter/s03_source.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s03_knn.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s03_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s03_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s03_target.wav"></audio></td>
-      </tr>
-      <!-- Row 4 -->
-      <tr data-tag="rep">
-        <td>
-          <div class="sample-label">S04 · Repetition</div>
-          <div class="sample-meta">F · 22 · "Can-can-can you hear"</div>
-        </td>
-        <td><audio controls src="audio/stutter/s04_source.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s04_knn.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s04_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s04_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/stutter/s04_target.wav"></audio></td>
-      </tr>
-    </tbody>
+    <tbody id="tbody-stutter"></tbody>
   </table>
 </div>
 
 <hr class="divider"/>
 
-<!-- ═══════════════════════════════════════
-     SECTION 2 · Dementia (ADReSS)
-═══════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+  SECTION 2 · Dementia (ADReSS)
+  Path: final_files/elderly/dementia/{mild|severe}/{n}_{src}_{tgt}_{model}.wav
+══════════════════════════════════════ -->
 <div class="samples-wrap">
   <p class="section-title">Experiment 02</p>
   <h2>Dementia Speech</h2>
-  <p class="section-desc">ADReSS dataset · Pause pattern and prosody preservation for clinical diagnosis</p>
-
+  <p class="section-desc">ADReSS dataset &nbsp;·&nbsp; Pause patterns and prosodic abnormalities preserved across both target genders.</p>
   <div class="tabs">
-    <button class="tab active" onclick="showGroup(this,'dementia','all')">All</button>
-    <button class="tab" onclick="showGroup(this,'dementia','mild')">Mild</button>
-    <button class="tab" onclick="showGroup(this,'dementia','mod')">Moderate</button>
+    <button class="tab active" onclick="filterTable('dementia','all',this)">All</button>
+    <button class="tab" onclick="filterTable('dementia','mild',this)">Mild</button>
+    <button class="tab" onclick="filterTable('dementia','severe',this)">Severe</button>
   </div>
-
   <table class="audio-table" id="table-dementia">
     <thead>
       <tr>
-        <th>Sample</th>
-        <th><span class="model-badge">SOURCE</span><br>Original Speaker</th>
-        <th><span class="model-badge">kNN-VC</span><br>Baseline</th>
-        <th><span class="model-badge">YourTTS</span><br>Baseline</th>
-        <th><span class="model-badge ours">PHY-VC</span><br>Ours</th>
-        <th><span class="model-badge">TARGET</span><br>Reference</th>
+        <th style="text-align:left">Sample</th>
+        <th>Source</th>
+        <th><span class="model-badge">kNN-VC</span></th>
+        <th><span class="model-badge">Emo-StarGAN</span></th>
+        <th><span class="model-badge">DDSP-QbE</span></th>
+        <th><span class="model-badge ours">Phy-VC (Ours)</span></th>
       </tr>
     </thead>
-    <tbody>
-      <tr data-tag="mild">
-        <td>
-          <div class="sample-label">D01 · Mild</div>
-          <div class="sample-meta">F · 72 · Cookie theft description</div>
-        </td>
-        <td><audio controls src="audio/dementia/d01_source.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d01_knn.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d01_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d01_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d01_target.wav"></audio></td>
-      </tr>
-      <tr data-tag="mod">
-        <td>
-          <div class="sample-label">D02 · Moderate</div>
-          <div class="sample-meta">M · 79 · Picture description task</div>
-        </td>
-        <td><audio controls src="audio/dementia/d02_source.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d02_knn.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d02_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d02_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d02_target.wav"></audio></td>
-      </tr>
-      <tr data-tag="mild">
-        <td>
-          <div class="sample-label">D03 · Mild</div>
-          <div class="sample-meta">F · 68 · Free speech, connected discourse</div>
-        </td>
-        <td><audio controls src="audio/dementia/d03_source.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d03_knn.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d03_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d03_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/dementia/d03_target.wav"></audio></td>
-      </tr>
-    </tbody>
+    <tbody id="tbody-dementia"></tbody>
   </table>
 </div>
 
 <hr class="divider"/>
 
-<!-- ═══════════════════════════════════════
-     SECTION 3 · Elderly
-═══════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+  SECTION 3 · Elderly
+  Path: final_files/elderly/healthy/{n}_{src}_{tgt}_{model}.wav
+══════════════════════════════════════ -->
 <div class="samples-wrap">
   <p class="section-title">Experiment 03</p>
   <h2>Elderly Speech</h2>
-  <p class="section-desc">Nasality, vocal tremor, and reduced articulatory precision preservation</p>
-
+  <p class="section-desc">Healthy elderly speakers &nbsp;·&nbsp; Nasality, vocal tremor, and reduced articulatory precision preserved across target genders.</p>
   <table class="audio-table" id="table-elderly">
     <thead>
       <tr>
-        <th>Sample</th>
-        <th><span class="model-badge">SOURCE</span><br>Original Speaker</th>
-        <th><span class="model-badge">kNN-VC</span><br>Baseline</th>
-        <th><span class="model-badge">YourTTS</span><br>Baseline</th>
-        <th><span class="model-badge ours">PHY-VC</span><br>Ours</th>
-        <th><span class="model-badge">TARGET</span><br>Reference</th>
+        <th style="text-align:left">Sample</th>
+        <th>Source</th>
+        <th><span class="model-badge">kNN-VC</span></th>
+        <th><span class="model-badge">Emo-StarGAN</span></th>
+        <th><span class="model-badge">DDSP-QbE</span></th>
+        <th><span class="model-badge ours">Phy-VC (Ours)</span></th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>
-          <div class="sample-label">E01 · Tremor</div>
-          <div class="sample-meta">M · 83 · Read speech, sustained vowel</div>
-        </td>
-        <td><audio controls src="audio/elderly/e01_source.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e01_knn.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e01_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e01_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e01_target.wav"></audio></td>
-      </tr>
-      <tr>
-        <td>
-          <div class="sample-label">E02 · Nasality</div>
-          <div class="sample-meta">F · 77 · Spontaneous narrative</div>
-        </td>
-        <td><audio controls src="audio/elderly/e02_source.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e02_knn.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e02_yourtts.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e02_phyvc.wav"></audio></td>
-        <td><audio controls src="audio/elderly/e02_target.wav"></audio></td>
-      </tr>
-    </tbody>
+    <tbody id="tbody-elderly"></tbody>
   </table>
 </div>
 
 <hr class="divider"/>
 
-<!-- ═══════════════════════════════════════
-     SYSTEM FIGURE
-═══════════════════════════════════════ -->
+<!-- Architecture -->
 <div class="fig-wrap">
   <p class="section-title">System Overview</p>
   <h2>Architecture</h2>
   <p class="section-desc" style="margin-bottom:20px;">Webster's equation-based vocal tract model with physics-constrained DDSP synthesis</p>
   <div class="fig-card">
-    <div class="fig-placeholder">
-      [ Replace with system_diagram.png ]
-    </div>
+    <div class="fig-placeholder">[ Replace with system_diagram.png ]</div>
     <p class="fig-caption">
-      <strong>Figure 1.</strong> Phy-VC pipeline: speaker-invariant content encoder → articulatory parameter predictor (FormantNet) → Webster's equation PDE layer → DDSP vocoder with PolyBLEP anti-aliasing → anonymized output preserving clinical acoustic markers.
+      <strong>Figure 1.</strong> Phy-VC pipeline: WavLM content encoder → CNN preprocessing → Transformer → Webster's equation surrogate (FormantNet) → DDSP vocoder with PolyBLEP anti-aliasing → anonymized output preserving clinical acoustic markers.
     </p>
   </div>
 </div>
 
 <footer>
-  Phy-VC · Interspeech 2026 · <a href="#" style="color:inherit">Paper</a> · <a href="#" style="color:inherit">Code</a><br><br>
-  Audio samples are anonymized for blind review. &nbsp;|&nbsp; Page built with plain HTML.
+  Phy-VC &nbsp;·&nbsp; Interspeech 2026 &nbsp;·&nbsp; Audio samples anonymized for blind review. &nbsp;|&nbsp; Page built with plain HTML.
 </footer>
 
 <script>
-  // Tab filtering
-  function showGroup(btn, tableId, tag) {
-    // update tab styles
-    btn.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
+// ═══════════════════════════════════════════
+//  SAMPLE DATA
+//  n       : file index (matches filename prefix)
+//  src     : source speaker gender (M or F)
+//  type    : subfolder / filter tag
+//  label   : display name
+//  meta    : short descriptor shown in the cell
+// ═══════════════════════════════════════════
 
-    const rows = document.querySelectorAll(`#table-${tableId} tbody tr`);
-    rows.forEach(row => {
-      if (tag === 'all' || row.dataset.tag === tag) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
-  }
+const STUTTER_SAMPLES = [
+  // — Sound Repetition —
+  { n:1, src:'M', type:'srep',        label:'Sound Rep.',  meta:'M · sample 1' },
+  { n:2, src:'M', type:'srep',        label:'Sound Rep.',  meta:'M · sample 2' },
+    { n:3, src:'F', type:'srep',        label:'Sound Rep.',  meta:'F · sample 3' },
+    { n:4, src:'F', type:'srep',        label:'Sound Rep.',  meta:'F · sample 4' },
+  // — Word Repetition —
+  { n:1, src:'M', type:'wrep',        label:'Word Rep.',   meta:'M · sample 1' },
+  { n:2, src:'M', type:'wrep',        label:'Word Rep.',   meta:'M · sample 2' },
+    { n:3, src:'F', type:'wrep',        label:'Word Rep.',   meta:'F · sample 3' },
+  { n:4, src:'F', type:'wrep',        label:'Word Rep.',   meta:'F · sample 4' },
+  // — Prolongation —
+  { n:1, src:'M', type:'prolongation',label:'Prolongation',meta:'M · sample 1' },
+  { n:2, src:'M', type:'prolongation',label:'Prolongation',meta:'M · sample 2' },
+    { n:3, src:'F', type:'prolongation',label:'Prolongation',meta:'F · sample 3' },
+  { n:4, src:'F', type:'prolongation',label:'Prolongation',meta:'F · sample 4' },
+    { n:5, src:'F', type:'prolongation',label:'Prolongation',meta:'F · sample 5' },
+
+  // — Block —
+  { n:1, src:'F', type:'block',       label:'Block',       meta:'F · sample 1' },
+    { n:2, src:'F', type:'block',       label:'Block',       meta:'F · sample 2' },
+    { n:3, src:'M', type:'block',       label:'Block',       meta:'M · sample 3' },
+    { n:4, src:'M', type:'block',       label:'Block',       meta:'M · sample 4' },
+  // — Filler —
+  { n:1, src:'M', type:'filler',label:'Interjection',meta:'M · sample 1' },
+  { n:2, src:'M', type:'filler',label:'Interjection',meta:'M · sample 2' },
+    { n:3, src:'F', type:'filler',label:'Interjection',meta:'F · sample 3' },
+  { n:4, src:'F', type:'filler',label:'Interjection',meta:'F · sample 4' },
+];
+
+const DEMENTIA_SAMPLES = [
+  { n:1, src:'M', type:'mild',   label:'Mild',   meta:'M · sample 1' },
+  { n:2, src:'F', type:'mild',   label:'Mild',   meta:'F · sample 2' },
+  { n:1, src:'F', type:'severe', label:'Severe', meta:'F · sample 1' },
+  { n:2, src:'M', type:'severe', label:'Severe', meta:'M · sample 2' },
+];
+
+const ELDERLY_SAMPLES = [
+  { n:1, src:'F', type:'healthy', label:'Healthy elderly', meta:'F · sample 1' },
+  { n:2, src:'F', type:'healthy', label:'Healthy elderly', meta:'F · sample 2' },
+  { n:3, src:'M', type:'healthy', label:'Healthy elderly', meta:'M · sample 3' },
+  { n:4, src:'M', type:'healthy', label:'Healthy elderly', meta:'M · sample 4' },
+];
+
+// ═══════════════════════════════════════════
+//  PATH FUNCTIONS
+//  Adjust base folder here if needed
+// ═══════════════════════════════════════════
+const paths = {
+  stutter(n, src, tgt, model, type) {
+    if (model === 'original') return `final_files/stuttering/${type}/${n}_original.wav`;
+    return `final_files/stuttering/${type}/${n}_${src}_${tgt}_${model}.wav`;
+  },
+  dementia(n, src, tgt, model, type) {
+    if (model === 'original') return `final_files/elderly/dementia/${type}/${n}_original.wav`;
+    return `final_files/elderly/dementia/${type}/${n}_${src}_${tgt}_${model}.wav`;
+  },
+  elderly(n, src, tgt, model) {
+    if (model === 'original') return `final_files/elderly/healthy/${n}_original.wav`;
+    return `final_files/elderly/healthy/${n}_${src}_${tgt}_${model}.wav`;
+  },
+};
+
+// ═══════════════════════════════════════════
+//  RENDER ENGINE
+// ═══════════════════════════════════════════
+const MODELS = ['knnvc', 'emo', 'ddspqbe', 'ours'];
+
+function au(src) {
+  return `<audio controls src="${src}"></audio>`;
+}
+
+/**
+ * Render a sample pair (female row + male row) as HTML string.
+ *
+ * @param {object} s       - sample descriptor
+ * @param {Function} pfn   - (n, src, tgt, model) => path string
+ */
+function renderPair(s, pfn) {
+  const srcAudio = au(pfn(s.n, s.src, null, 'original'));
+
+  const rows = [
+    { tgtCode:'F', cls:'female', icon:'♀', label:'→ Female', pairClass:'' },
+    { tgtCode:'M', cls:'male',   icon:'♂', label:'→ Male',   pairClass:'pair-bottom' },
+  ];
+
+  return rows.map((r, i) => {
+    const srcCell = i === 0
+      ? `<td class="src-cell" rowspan="2">
+           <div class="sample-label">${s.label}</div>
+           <div class="sample-meta">${s.meta}</div>
+           <span class="disfluency-tag">${s.type}</span>
+           <div style="margin-top:8px">${srcAudio}</div>
+         </td>`
+      : '';
+
+    const modelCells = MODELS.map(m =>
+      `<td>${au(pfn(s.n, s.src, r.tgtCode, m))}</td>`
+    ).join('');
+
+    return `<tr data-tag="${s.type}" class="${r.pairClass}">
+  ${srcCell}
+  <td class="tgt-cell ${r.cls}">${r.icon} ${r.label}</td>
+  ${modelCells}
+</tr>`;
+  }).join('\n');
+}
+
+function renderTable(tbodyId, samples, pfn) {
+  document.getElementById(tbodyId).innerHTML =
+    samples.map(s => renderPair(s, pfn)).join('\n');
+}
+
+// ── init ──
+renderTable('tbody-stutter',  STUTTER_SAMPLES,  (n,src,tgt,m) => paths.stutter(n,src,tgt,m, STUTTER_SAMPLES.find(s=>s.n===n&&s.src===src)?.type));
+renderTable('tbody-dementia', DEMENTIA_SAMPLES, (n,src,tgt,m) => paths.dementia(n,src,tgt,m, DEMENTIA_SAMPLES.find(s=>s.n===n&&s.src===src)?.type));
+renderTable('tbody-elderly',  ELDERLY_SAMPLES,  (n,src,tgt,m) => paths.elderly(n,src,tgt,m));
+
+// The above "find" approach fails when same n appears in different types.
+// Re-render with proper closure instead:
+document.getElementById('tbody-stutter').innerHTML =
+  STUTTER_SAMPLES.map(s => renderPair(s,
+    (n,src,tgt,m) => paths.stutter(n,src,tgt,m,s.type)
+  )).join('\n');
+
+document.getElementById('tbody-dementia').innerHTML =
+  DEMENTIA_SAMPLES.map(s => renderPair(s,
+    (n,src,tgt,m) => paths.dementia(n,src,tgt,m,s.type)
+  )).join('\n');
+
+document.getElementById('tbody-elderly').innerHTML =
+  ELDERLY_SAMPLES.map(s => renderPair(s,
+    (n,src,tgt,m) => paths.elderly(n,src,tgt,m)
+  )).join('\n');
+
+// ── tab filter ──
+function filterTable(tableId, tag, btn) {
+  btn.closest('.tabs').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll(`#table-${tableId} tbody tr`).forEach(row => {
+    // show/hide pairs together: both rows carry the same data-tag
+    row.style.display = (tag === 'all' || row.dataset.tag === tag) ? '' : 'none';
+  });
+}
 </script>
-
 </body>
 </html>
