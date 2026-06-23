@@ -244,19 +244,21 @@
 ══════════════════════════════════════ -->
 <div class="arch-wrap">
   <p class="section-title">System Overview</p>
-  <h2>Architecture</h2>
+  <h2>Overall Architecture</h2>
   <p class="section-desc" style="margin-bottom:20px;">Webster's equation-based vocal tract surrogate with physics-constrained DDSP synthesis</p>
   <div class="arch-card">
     <div class="arch-inner">
   <img src="resources/phyvc_architecture.png"
-       alt="Phy-VC Architecture Diagram"
+       alt="Phy-VC Architecture"
+       style="width:100%; max-width:100%; height:auto; border-radius:6px; display:block; margin:0 auto;"/>
+</div>
+      <div class="arch-inner">
+  <img src="resources/physics_module.png"
+       alt="Physics Module"
        style="width:100%; max-width:100%; height:auto; border-radius:6px; display:block; margin:0 auto;"/>
 </div>
     <p class="arch-caption">
-      <strong>Figure 1.</strong> Phy-VC overall architecture. Modules 1–4 show the pipeline from source utterance to converted speech. Red shading and arrows
-indicate components new to Phy-VC over the DDSP-QbE baseline. Prosodic feature mapping (in Module 1) is new over DDSP-QbE. In DDSP-
-QbE, the source prosodic embeddings (Wemo) is directly passed to the Fusion module. Normalised F0 and loudness features are also input to
-the Fusion module together with prosodic embeddings, following DDSP-QbE, but omitted for clarity, along with intermediate excitation signals.
+      Phy-VC overall architecture.
     </p>
   </div>
 </div>
