@@ -248,7 +248,7 @@
   <p class="section-desc" style="margin-bottom:20px;">Webster's equation-based vocal tract surrogate with physics-constrained DDSP synthesis</p>
   <div class="arch-card">
     <div class="arch-inner">
-  <img src="final_files/phyvc_architecture.png"
+  <img src="resources/phyvc_architecture.png"
        alt="Phy-VC Architecture Diagram"
        style="width:100%; max-width:100%; height:auto; border-radius:6px; display:block; margin:0 auto;"/>
 </div>
@@ -521,28 +521,28 @@ const INTERP_SAMPLES = [
 
 const paths = {
   stutter(n, src, tgt, model, type) {
-    if (model === 'original') return `final_files/stuttering/${type}/${n}_original.wav`;
-    return `final_files/stuttering/${type}/${n}_${src}_${tgt}_${model}.wav`;
+    if (model === 'original') return `resources/stuttering/${type}/${n}_original.wav`;
+    return `resources/stuttering/${type}/${n}_${src}_${tgt}_${model}.wav`;
   },
   dementia(n, src, tgt, model, type) {
-    if (model === 'original') return `final_files/elderly/dementia/${type}/${n}_original.wav`;
-    return `final_files/elderly/dementia/${type}/${n}_${src}_${tgt}_${model}.wav`;
+    if (model === 'original') return `resources/elderly/dementia/${type}/${n}_original.wav`;
+    return `resources/elderly/dementia/${type}/${n}_${src}_${tgt}_${model}.wav`;
   },
   elderly(n, src, tgt, model) {
-    if (model === 'original') return `final_files/elderly/healthy/${n}_original.wav`;
-    return `final_files/elderly/healthy/${n}_${src}_${tgt}_${model}.wav`;
+    if (model === 'original') return `resources/elderly/healthy/${n}_original.wav`;
+    return `resources/elderly/healthy/${n}_${src}_${tgt}_${model}.wav`;
   },
   standardds(n, src, tgt, model) {
-    if (model === 'original') return `final_files/sd/${n}_original.wav`;
-    return `final_files/sd/${n}_${src}_${tgt}_${model}.wav`;
+    if (model === 'original') return `resources/sd/${n}_original.wav`;
+    return `resources/sd/${n}_${src}_${tgt}_${model}.wav`;
   },
   vtl(n, src, factor) {
-    if (factor === 'original') return `final_files/vtl/${n}_original.wav`;
-    return `final_files/vtl/${n}_${src}_${factor}.wav`;
+    if (factor === 'original') return `resources/vtl/${n}_original.wav`;
+    return `resources/vtl/${n}_${src}_${factor}.wav`;
   },
   interp(n, src, ratio) {
-    if (ratio === 'original') return `final_files/blend/original_${n}.wav`;
-    return `final_files/blend/${n}_${src}_${ratio}.wav`;
+    if (ratio === 'original') return `resources/blend/original_${n}.wav`;
+    return `resources/blend/${n}_${src}_${ratio}.wav`;
   },
 };
 
